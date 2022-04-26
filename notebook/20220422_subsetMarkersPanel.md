@@ -71,7 +71,7 @@ The filtering went as follows:
 3) filter out low FST values because some pairwise comparisons have very low overall FST so we filtered out all loci with FST < 0.2: 3,148 loci
 4) finally with this dataset I took each chromosome and split it into 6 even windows and pulled out the 2 loci with the highest FST values: 6 x 2 x 23 = 276 loci (**METHOD 1**)  
 
-[Method 1 PCA results are plotted here.](../figures/pcas/highFST/top2_6windPerChrom.jpg)
+[](../figures/pcas/highFST/top2_6windPerChrom.jpg)
 
 Results from this analysis get us close to what we are looking for. This separates eGOA, wGOA, Russia, and Pervenets unique genotype well. It is lacking a bit in its ability to separate out AI samples from wGOA however. 
 
@@ -79,7 +79,7 @@ Results from this analysis get us close to what we are looking for. This separat
 
 As an addition to method 1, an additional qualifier per chromosome is added: only one locus can come from a given comparison for each chromosome. This keeps a single pairwise comparison from over contributing to the final set of loci per chromosome.  
 
-[Method 2 PCA results are plotted here.](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerChrom.jpg)  
+[](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerChrom.jpg)  
 
 
 This method gives us the best resolution so far for splitting our five targeted regions: eGOA, wGOA, Russia, Pervenents unique genotype, and AI.   
@@ -88,6 +88,6 @@ This method gives us the best resolution so far for splitting our five targeted 
 
 To test whether method 2 is too conservative, the qualifier was changed to check that only one locus can come from a given comparison within each window. This then allows multiple loci to come from a given comparison per chromosome in case there are multiple islands on a chromosome that are strongest in one pairwise comparison.  
 
-[Method 3 PCA results are plotted here.](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerWind.jpg)  
+[](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerWind.jpg)  
 
 This one actually performed slightly worse than method 2 in terms of separating out AI from wGOA and the unique Pervenents genotype from AI. Method 2 has the best resolution compared to our goal plot.  
