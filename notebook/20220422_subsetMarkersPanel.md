@@ -97,7 +97,7 @@ The filtering went as follows:
 
 As an addition to method 1, an additional qualifier per chromosome is added: only one locus can come from a given comparison for each chromosome. This keeps a single pairwise comparison from over contributing to the final set of loci per chromosome.  
 
-![](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerChrom.jpg)  
+![](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerChrom.jpeg)  
 
 
 **Conclusion**: This method gives us the best resolution so far for splitting our five targeted regions: eGOA, wGOA, Russia, Pervenents unique genotype, and AI.   
