@@ -1,15 +1,9 @@
----
-title: "GT-Seq Panel"
-author: "Sara Michele Schaal"
-date: "5/26/2022"
-output: html_document
----
-
 # Subset Loci for GT-Seq Panel Development
 
 ## Panel Goal
 The panel will be used to identify population of origin for samples from throughout the GOA and Bering Sea. Initial projects in the works include 1) identifying spawning population of origin for summer caught Pacific cod from various regions including the Northern Bering Sea, GOA, and AI. 
 
+Ingrid: NOTE
 
 ## Sample distribution
 We have samples that spawn the Eastern GOA through the AI and up into the Bering Sea and Russia that were all in spawning condition. In addition, we have samples that were not in spawning condition that were tagged in the summer in the Northern Bering Sea (i.e., yellow and dark orange points Vesteraalen-tagged 9 and AK-Knight-tagged 20) and two samples tagged in the summer in the AI (i.e., orange point Aleutian Tagged - 2). These tagged samples were not included in the development of the panel and will not be a part of the data shown below.  
@@ -158,3 +152,4 @@ Adding too many markers from the island on 12 caused clusters to become some wha
 
 #### Zoom in on Chr 9  
 ![](../figures/fst/gtSEQ_panel/chr9_ZP3_fst.jpeg)
+
