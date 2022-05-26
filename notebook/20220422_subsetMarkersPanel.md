@@ -1,3 +1,10 @@
+---
+title: "GT-Seq Panel"
+author: "Sara Michele Schaal"
+date: "5/26/2022"
+output: html_document
+---
+
 # Subset Loci for GT-Seq Panel Development
 
 ## Panel Goal
@@ -10,10 +17,12 @@ We have samples that spawn the Eastern GOA through the AI and up into the Bering
 
 <br>
 
-## Genetic Structure
+## Atlantic cod reference genome
+
+### Genetic Structure
 Using low-coverage whole-genome sequencing data, we evaluated the population genetic structure of Pacific cod across our sampled range. We first evaluated structure using principal component analysis (PCA) to identify genetic clusters in our data.   
 
-### All markers 
+#### All markers 
 We first plot the genomewide PCA to look at genomewide differentiation:    
 ![all markers PCA](../figures/pcas/pcod_genomewidePCA.jpg)  
 
@@ -111,3 +120,41 @@ To test whether method 2 is too conservative, the qualifier was changed to check
 ![](../figures/pcas/highFST/top2_6windPerChrom_oneCompPerWind.jpg)  
 
 **Conclusion**: This one actually performed slightly worse than method 2 in terms of separating out AI from wGOA and the unique Pervenents genotype from AI. Method 2 has the best resolution compared to our goal plot.  
+
+<br>
+<br>
+
+### Add some markers at island on chr 12 and ZP3
+
+We wanted to add a few extra markers from chromosome 12 which differentiates AI Pacific cod from all other populations. In addition, we wanted to add a few markers from ZP3 a known gene of interest from previous work by Ingrid (see Spies et al. 2021).
+
+Adding too many markers from the island on 12 caused clusters to become some what muddled (see first figure below). So I needed to find a balance of markers that helped separate out AI from wGOA, but did not change Russia/NBS Shelf or wGOA clusters. 
+
+#### 18 loci from chr 12 island and 5 ZP3
+
+![](../figures/pcas/gtSEQ_panel/pcodGMAC_final_gtSEQ_panel_18chr12_zp3.jpg)
+
+**Conclusion**: some Russian samples now cluster closely with wGOA and a a large cluster of samples from AI, Pervenets, and Unimak split off in between AI and wGOA. 
+
+<br>
+
+#### 8 top FST loci from unique pairwise comparisons on chr 12 and 5 ZP3  
+
+![](../figures/pcas/gtSEQ_panel/pcodGMAC_final_gtSEQ_panel_chr12_new8markers_uniqComp_zp3.jpg)
+
+**Conclusion**: keeps Russian samples separate from wGOA and still gets nice separation of wGOA and AI. **This is the final GT-Seq Panel!**
+
+<br>
+
+#### Distribution of GT-seq SNPs 
+
+![](../figures/fst/gtSEQ_panel/pcodGMAC_final_gtSEQ_panel_fst_8chr12_5zp3.jpg)
+<br>
+
+#### Zoom in on Chr 12  
+![](../figures/fst/gtSEQ_panel/chr12_largeIsland_fst.jpeg)
+
+<br>
+
+#### Zoom in on Chr 9  
+![](../figures/fst/gtSEQ_panel/chr9_ZP3_fst.jpeg)
