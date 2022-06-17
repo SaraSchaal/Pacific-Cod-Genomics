@@ -153,3 +153,9 @@ Adding too many markers from the island on 12 caused clusters to become some wha
 #### Zoom in on Chr 9  
 ![](../figures/fst/gtSEQ_panel/chr9_ZP3_fst.jpeg)
 
+<br>
+
+#### Remove markers that failed during primer design  
+![](../figures/pcas/gtSEQ_panel/pcodGMAC_final_gtSEQ_panel_successfulPrimers.jpg)  
+
+**Conclusion**: Distribution of Russian samples are clustering more closely with wGOA with sites where primer design failed. 
