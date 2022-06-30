@@ -36,7 +36,7 @@ Here is another example chromsome (chr 4):
 
 ## Part 2: Sliding window
 
-Use a sliding window to identify interesting regions. Parameters that need to be determined:   
+Use a sliding window to identify interesting regions. **POTENTIAL CHANGE** parameters that need to be determined:   
 1) set the window size (currently 100 kb)  
 2) set the sliding distance (currently 50 kb)  
 3) set the number of high *F<sub>ST</sub>* loci required in the window to be called an island region (currently 3)  
