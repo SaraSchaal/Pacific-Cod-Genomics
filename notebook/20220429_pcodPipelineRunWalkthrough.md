@@ -1,6 +1,8 @@
 ## lcWGS of Pacific Cod Walkthrough
 I have run the Pacific cod data through the pipeline using the Atlantic cod reference genome and the new Pacific cod reference genome. The Atlantic cod run has all associated files named pcodGMAC, whereas the run using the pacific cod reference is called pcodREF. pcodGMAC had 944 samples 
 
+https://github.com/letimm/WGSfqs-to-genolikelihoods
+
 # Step 0 - Configure  
 
 i) We first need move data of interest from sednagold to sedna.  
@@ -29,7 +31,13 @@ ii) Next we need to make the config file and organize everything needed for the 
 This pipeline will run with any file name so it is not necessary to rename files. However, we do need to get all file names into a .txt file for the configuration step. This can be done by moving to the appropriate directory where your files are and running this line of code:  
 
 ```
-ls | while read file; do newfile=`echo /home/sschaal/pcod/20220429/novaseq/$file`; echo $newfile >> pcodREF_fastqs.txt; done
+ls *.fq.gz | while read file; do newfile=`echo /home/sschaal/pcod/20220125/novaseq/$file`; echo $newfile >> pcod_fastqs.txt; done
+```
+
+iii) run the first pipeline script
+
+```
+lcWGSpipeline_step0-configure_vX.Y.py -c {lcWGS_config.txt}
 ```
 
 if the config step works you should see this message:
@@ -44,8 +52,15 @@ Remember to pass the newly-made checkpoint (.ckpt) file with the '-p' flag.
 
 # Step 1
 
+Next we do the QC steps. 
+
+i) run the second pipeline script:
 ```
-Step 1 has finished successfully! You will find two new scripts in ./scripts/: /home/sschaal/pcod/20220429/novaseq/scripts/pcodREF-raw_fastqcARRAY.sh and /home/sschaal/pcod/20220429/novaseq/scripts/pcodREF-raw_multiqcSLURM.sh.
+ lcWGSpipeline_step1-qc_20220125.py -p pcod20220713.ckpt
+```
+
+```
+Step 1 has finished successfully! You will find two new scripts in ./scripts/: lc/home/sschaal/pcod/20220429/novaseq/scripts/pcodREF-raw_fastqcARRAY.sh and /home/sschaal/pcod/20220429/novaseq/scripts/pcodREF-raw_multiqcSLURM.sh.
 /home/sschaal/pcod/20220429/novaseq/scripts/pcodREF-raw_fastqcARRAY.sh must run prior to launching /home/sschaal/pcod/20220429/novaseq/scripts/pcodREF-raw_multiqcSLURM.sh.
  However, there is no need to wait for these jobs to finish to move to step 2.
 To continue on, call step 2 to generate a script for TRIMMOMATIC.
@@ -83,3 +98,11 @@ After they have run, you will have genotype likelihoods (gls) and allele frequen
 Congratulations! This represents the end of data assembly.
 
 ```
+
+### Needed updates
+
+1) add the python script: mean_cov_ind.py
+2) add multiqc instructions and instructions for updating the script that the pipeline generates 
+    - Need to manually change your multiqc path in the multiQC.sh file to: ```source /home/sschaal/qc_env/bin/activate```. 
+3) genomewide data for fst
+4) add pcangsd notes for understanding the covariance matrix output is in the order of the bams list that went into the program 
